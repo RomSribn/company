@@ -36,13 +36,13 @@ console.log(typeof res[0]);
 var oilCanvas = document.getElementById("oilChart");
 
 
-oilCanvas.addEventListener('click', handleClick);
+// oilCanvas.addEventListener('click', handleClick);
 
 function handleClick(event){
 	console.log(event);
 }
 Chart.defaults.global.defaultFontFamily = "Lato";
-Chart.defaults.global.defaultFontSize = 10;
+Chart.defaults.global.defaultFontSize = 18;
 
 var oilData = {
 	labels: uniqArr,
@@ -63,8 +63,18 @@ var pieChart = new Chart(oilCanvas, {
   type: 'pie',
   data: oilData,
   options: {
-        labels: {
-            display: false,
-        }
-    }
+                    legend: {
+                        display: false
+                    },
+                    'onClick' : function (evt, item) {
+                    	oilCanvas.classList.add('d-none');
+                    	fields.listByCountries.classList.remove('d-none');
+                    	let label = item[0]._model.label;
+                        fields.listByCountries.innerHTML = createNameByCountries(jsondata, label)
+                    }
+                }
 });
+oilCanvas.onclick = function(evt){
+    var activePoints = pieChart.getElementsAtEvent(evt);
+    // => activePoints is an array of points on the canvas that are at the same position as the click event.
+};

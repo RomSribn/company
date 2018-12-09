@@ -6,15 +6,28 @@ const log = txt => console.log(txt);
 const fields = {
 	total: document.querySelector('.total'),
 	listCompanies: document.getElementById('listCompanies'),
-	listPartners: document.querySelector('.partnersList')
+	listPartners: document.querySelector('.partnersList'),
+	listByCountries: document.getElementById('listByCountry'),
+	partners: document.getElementById('partners')
 }
-
+log(fields.partners)
 log(fields.total.innerHTML)
 
 log(fields.listCompanies)
 
 fields.listCompanies.addEventListener('click', handleGetListName)
-//formatting list of companies
+fields.listByCountries.addEventListener('click', handleHide)
+
+
+//hiding listByCountries after click
+function handleHide(event){
+	const evt = event.target
+	fields.listByCountries.classList.add('d-none');
+	oilCanvas.classList.remove('d-none')
+}
+
+
+//creating list of companies
 function createNameList(company){
 	let markup = [];
 	company.list.forEach(item => {
@@ -22,7 +35,16 @@ function createNameList(company){
 	})
 	return markup
 }
-
+//list of companies by countries
+function createNameByCountries(company, item){
+	let markup = [];
+	company.list.forEach(i => {
+		if(i.location.name === item){
+			markup.push(`<option>${i.name}</option>`)
+		}
+	})
+	return markup
+}
 //create list of partners
 // function createPartnersList(company){
 // 	let markup = [];
@@ -39,6 +61,7 @@ function createNameList(company){
 
 //getting name company from "List of companies"
 function handleGetListName(event){
+	fields.partners.classList.remove('d-none')
 	var evt = event.target
 	log(event)
 	let markup = [];
