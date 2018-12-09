@@ -40,6 +40,7 @@ function createNameList(company){
 //getting name company from "List of companies"
 function handleGetListName(event){
 	var evt = event.target
+	log(event)
 	let markup = [];
 	// log(company)
 	jsondata.list.forEach(item => {
@@ -48,7 +49,7 @@ function handleGetListName(event){
 			item.partners.forEach(itemPartners => markup.push(`<div class="partnerListItem"><div class="line"><div class="circleSmall"><h4 class="inner">${itemPartners.value}</h4></div></div><h4>${itemPartners.name}</h4></div>`))
 		}
 	})
-	fields.listPartners.innerHTML = markup.join('')
+	fields.listPartners.innerHTML = markup.sort().join('')
 }
 
 

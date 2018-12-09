@@ -71,7 +71,9 @@ select{
 	margin-left: -31px;
     margin-top: -70px;
 }
-
+.oilChart{
+	position: absolute;
+}
 /*.partnerListItem:before{
 	content: 'I';
 	padding: 5px;

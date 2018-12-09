@@ -1944,7 +1944,3 @@ const jsondata = {
   "status": "OK"
 }
 
-// const data = JSON.parse(jsondata);
-
-console.log(typeof jsondata)
-console.log(jsondata);
