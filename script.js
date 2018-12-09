@@ -15,7 +15,7 @@ log(fields.total.innerHTML)
 
 log(fields.listCompanies)
 
-fields.listCompanies.addEventListener('click', handleGetListName)
+fields.listCompanies.addEventListener('change', handleGetListName)
 fields.listByCountries.addEventListener('click', handleHide)
 
 
@@ -63,12 +63,12 @@ function createNameByCountries(company, item){
 function handleGetListName(event){
 	fields.partners.classList.remove('d-none')
 	var evt = event.target
-	log(event)
+	log(evt.value)
 	let markup = [];
 	// log(company)
 	jsondata.list.forEach(item => {
 		// log(item)
-		if(item.name === evt.innerHTML){
+		if(item.name === evt.value){
 			item.partners.forEach(itemPartners => markup.push(`<div class="partnerListItem"><div class="line"><div class="circleSmall"><h4 class="inner">${itemPartners.value}</h4></div></div><h4>${itemPartners.name}</h4></div>`))
 		}
 	})
