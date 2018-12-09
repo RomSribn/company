@@ -1,0 +1,91 @@
+.circle:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  border-radius: 100%
+}
+.circle{
+	display: inline-block;
+	text-align: center;
+	height: 200px;
+	width: 200px;
+	border-radius: 100%;
+	margin-left: -7px;
+}
+h4.inner{
+	display: inline-block;
+}
+.inner{
+	vertical-align: middle;
+	margin-top: auto;
+	display: inline-block;
+}
+body{
+	padding: 50px;
+}
+
+option{
+	padding: 10px;
+	border: 0.5px  solid black;
+}
+option:focus{
+	border:none;
+}
+select{
+	border: none;
+}
+
+.partnersList{
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: scroll; /* Добавляем полосу прокрутки */
+    /*width: 300px;   */
+    height: 360px; 
+    padding: 5px; /* Поля вокруг текста */
+    /*border: solid 1px black; /* Параметры рамки */
+    white-space: nowrap; /* Запрещаем перенос строк */
+}
+.partnerListItem{
+	width: 71px;
+    height: 200px;
+    border: 1px solid black;
+    margin-left: 40px;
+    margin-top: 150px;
+}
+.line{
+	height: 50px;
+	width: 10px;
+	border: 1px solid black;
+	margin-top: -10px;
+	margin-top: -50px;
+    margin-left: 30px;
+}
+.circleSmall{
+	padding-top: 15px;
+	text-align: center;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%;
+	border: 1px solid black;
+	margin-left: -31px;
+    margin-top: -70px;
+}
+
+/*.partnerListItem:before{
+	content: 'I';
+	padding: 5px;
+	color:#fff;
+	border:1px solid black;
+	height: 50px;
+	width: 20px;
+	margin-bottom: 10px;
+	line-height: 10px;
+}*/
+.partnerListItem>h4{
+	display: inline-block;
+    transform: rotate(-90deg);
+    margin-top: 105px;
+    margin-left: -20px;
+    text-align: right;
+}
