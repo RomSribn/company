@@ -39,7 +39,7 @@ const carousel = document.querySelector('.carousel-inner')
 
 //fetching dates
 function getFetchingCompany(){
-	return fetch('http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList')
+	return fetch('https://codeit.pro/codeitCandidates/serverFrontendTest/company/getList')
 			.then(response => {
 				if(response.ok) return response.json();
 				throw new Error ('Error fetching')
@@ -48,7 +48,7 @@ function getFetchingCompany(){
 			.catch(error => log(error))
 }
 function getFetchingNews(){
-	return fetch('http://codeit.pro/codeitCandidates/serverFrontendTest/news/getList')
+	return fetch('https://codeit.pro/codeitCandidates/serverFrontendTest/news/getList')
 	.then(response => {
 		if(response.ok) return response.json();
 				throw new Error ('Error fetching')
