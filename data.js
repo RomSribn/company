@@ -82,7 +82,7 @@ function createNameByCountries(company, item){
 }
 
 //create news list
-// put title in h4 ${title}, when title will be excist
+// put title in h4 ${title}, when title will be exist
 function createNewsList(news){
 	let markup = [];
 	news.list.forEach(i => {
